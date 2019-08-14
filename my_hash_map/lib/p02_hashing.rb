@@ -4,6 +4,11 @@ end
 
 class Array
   def hash
+    code = 0
+    self.each_with_index do |ele, i|
+      code += (ele.hash * i.hash) 
+    end
+    code
   end
 end
 
